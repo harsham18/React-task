@@ -8,4 +8,4 @@ function ErrorHandling() {
   )
 }
 
-export default ErrorHandling;
+export default ErrorHandling

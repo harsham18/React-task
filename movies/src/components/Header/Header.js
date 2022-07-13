@@ -8,14 +8,16 @@ import { getAllMovies, getAllShows } from "../../features/movies/movieSlice";
 import { useSelector } from "react-redux";
 
 
-const Header=()=>{
+const Header = () => {
+  {/*const movies = useSelector(getAllMovies);
+const shows = useSelector(getAllShows);*/}
 
-    const dispatch=useDispatch();
-    useState();
+  const dispatch=useDispatch();
+  useState();
 
-    const[term,setTerm]=useState("");
+  const[term,setTerm]=useState("");
 
-    const submitHandler= (e)=>{
+  const submitHandler= (e)=>{
 
     e.preventDefault();
    
@@ -23,34 +25,34 @@ const Header=()=>{
     dispatch(fetchAsyncShows(term))
     setTerm("");
   }
-    return (
-        <div>
-            <div className="header">
-            <Link to="/">
-            <div className="logo">netflix<span className=" logo-inner">roulette</span>
+
+  return (
+    <div className="header">
+      <Link to="/">
+        <div className="logo">netflix<span className=" logo-inner">roulette</span>
         </div>
-        </Link>
-        <div className="search-cont">
-            <h1>FIND YOUR MOVIE</h1>
-        {/* <h1>{count}</h1>*/}
+      </Link>
+      <div className="search-cont">
+        <h1>FIND YOUR MOVIE</h1>
+       {/* <h1>{count}</h1>*/}
         
-        <div className ="search-bar">
-            <form onSubmit={submitHandler}>
-                <input type="text" value={term} placeholder="Search Movies" onChange={(e)=>setTerm(e.target.value)}/>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <div className="search-filter">
-            <h3>SEARCH BY</h3>
-        <button type="submit" className="butt1">Title</button>
-        </div>
-        </div>
-        <div className="user-image">
-            <img src={user} alt="user" />
-        </div>
+      <div className ="search-bar">
+        <form onSubmit={submitHandler}>
+          <input type="text" value={term} placeholder="Search Movies" onChange={(e)=>setTerm(e.target.value)}/>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div className="search-filter">
+        <h3>SEARCH BY</h3>
+      <button type="submit" className="butt1">Title</button>
+      </div>
+      </div>
+      <div className="user-image">
+        <img src={user} alt="user" />
+      </div>
     </div>
-    </div>
-    );
+  
+  );
 };
 
 export default Header;
